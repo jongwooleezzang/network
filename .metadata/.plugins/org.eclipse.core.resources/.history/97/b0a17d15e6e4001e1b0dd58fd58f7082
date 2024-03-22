@@ -1,0 +1,13 @@
+package sec2;
+
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ReceiveThread extends Thread {
+	//동기화 블록
+	static List<PrintWriter> list = Collections.synchronizedList(new ArrayList<PrintWriter>());
+}
+
+

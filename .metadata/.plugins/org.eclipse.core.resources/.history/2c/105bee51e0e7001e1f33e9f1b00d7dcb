@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% page import="java.util.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP 구성요서</title>
+</head>
+<body>
+<h1>JSP 구성요소</h1>
+<h2>디렉티브(Derective)</h2>
+<p>필요한 자원을 가져올때 활용하는 jsp의 기본핑수 요소</p>
+</body>
+</html>

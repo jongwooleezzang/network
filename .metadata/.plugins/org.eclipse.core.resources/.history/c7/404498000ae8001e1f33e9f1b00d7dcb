@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %> 
+<%@ page import="org.kh.dto.Member" %>   
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSTL(java Standard Tag Livrary) CORE</title>
+</head>
+<body>
+<%
+	List<Member>mList = new ArrayList<Member>();
+	mList.add(new Member(1,kim,"1234,김민석"));
+	
+	
+%>
+<%@ include file="menu.jsp" %>
+<hr>
+<h2>JSTL(Jaca Standard Tag Livrary) CORE</h2>
+<p>CORE :JSTL의 기본의 명령</p>
+<%
+%>
+</body>
+</html>

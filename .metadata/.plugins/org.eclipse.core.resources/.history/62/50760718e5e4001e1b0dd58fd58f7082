@@ -1,0 +1,9 @@
+package sec2;
+
+public class MultyServer {
+
+	public static void main(String[] args) {
+
+	}
+
+}

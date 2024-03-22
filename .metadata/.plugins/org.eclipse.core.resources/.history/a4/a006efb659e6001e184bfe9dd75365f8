@@ -1,0 +1,21 @@
+package sec3;
+
+import java.io.BufferedReader;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+
+public class UDPClient {
+	private String rData;
+	private BufferedReader file;
+	private static int SERVER_PORT = 7000;
+	
+	public static void main(String[] args) {
+		
+		DatagramSocket socket =null;
+		DatagramPacket packet =null;
+		
+		InetAddress ip = InetAddress.getAllByName();
+	}
+
+}

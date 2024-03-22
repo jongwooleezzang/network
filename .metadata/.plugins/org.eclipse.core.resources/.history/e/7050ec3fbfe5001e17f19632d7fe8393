@@ -1,0 +1,9 @@
+package sec1;
+
+public class InetEx {
+
+	public static void main(String[] args) {
+
+	}
+
+}

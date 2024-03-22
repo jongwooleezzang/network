@@ -1,0 +1,16 @@
+package sec1;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.util.ArrayList;
+
+public class SeverBack extends Thread {
+	ArrayList<String> nickNameList = new ArrayList<String>();
+	
+	class ReceiveInfo extends Thread{//받는사람 정보
+		private DataInputStream in;
+		private DataOutputStream out;
+		String Nickname;
+		String message;
+	}
+} 

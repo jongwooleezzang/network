@@ -1,0 +1,27 @@
+package sec3;
+
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+
+public class UDPServer {
+
+	public static void main(String[] args) {
+		DatagramSocket socket =null;
+		DatagramPacket packet =null;
+		try {
+			socket = new DatagramSocket(7000);
+			while(true) {
+					byte[] buffer =  new byte[512];
+					packet = new DatagramPacket(buffer, buffer.length);
+					System.out.println("ready");
+					socket.receive(packet); //패킷 싣기
+					String rData = new String(packet.getData()); //패킷(byte) 데이터 =String으로  형 변환
+					System.out.println("수신 데이터 : " +rData);
+					
+			}
+		}catch (Exception e) {
+			
+		}
+	}
+
+}

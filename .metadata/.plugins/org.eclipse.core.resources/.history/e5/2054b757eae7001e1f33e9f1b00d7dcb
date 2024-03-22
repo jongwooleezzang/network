@@ -1,0 +1,8 @@
+package org.kh.dto;
+
+public class Member {
+	private int no;
+	private String id;
+	private String pw;
+	
+}

@@ -1,0 +1,43 @@
+package sec1;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Vector;
+
+public class SeverBack extends Thread {
+	Vector<ReceiveInfo> clientList = new Vector<>(); //클라이언트 쓰레드 목록 
+	ArrayList<String> nickNameList = new ArrayList<String>(); //클라이언트 대화명 목록 
+	ServerSocket server; //서버는 서버소켓과 일반 소켓이 필요함 
+	Socket socket;
+	private ChatServerGUI serverchatGui;
+	
+	class ReceiveInfo extends Thread{//받는사람 정보
+		private DataInputStream in;
+		private DataOutputStream out;
+		String nickName;
+		String message;
+		
+		
+		public ReceiveInfo(Socket socket) {
+			try {
+				out = new DataOutputStream(socket.getOutputStream());
+				in = new DataInputStream(socket.getInputStream());
+				nickName = in.readUTF();
+				nickNameList.add(nickName);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+
+		@Override  //Start 는 run을 오버라이드 받아야 쓸수있음 
+		public void run() {
+			
+		}
+		
+	}
+} 

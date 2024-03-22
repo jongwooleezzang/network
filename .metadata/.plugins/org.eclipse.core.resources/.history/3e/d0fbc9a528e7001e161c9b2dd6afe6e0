@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP 8 객체</title>
+</head>
+<body>
+<h2>JSP 내장 객체 </h2>
+<p>out: 브라우저에 출력할 경우 사용</p>
+<p>request : 요청 정보를 담는 객체</p>
+<p>response : 응답 정보를 담는 객체</p>
+<p>session : 세션 정보를 담는 객체</p>
+<p>appliction : 웹 애플리케이션 정보를 담는 객체</p>
+<p>config : 웹 설정 정보를 담는 객체</p>
+<p>page : 웹 페이지 정보를 담는 객체 </p>
+<p>exception : 예외정보를 담는 객체 </p>
+<%
+ 	//Servlet 에서 page 객체 생성하기 
+%>
+</body>
+</html>

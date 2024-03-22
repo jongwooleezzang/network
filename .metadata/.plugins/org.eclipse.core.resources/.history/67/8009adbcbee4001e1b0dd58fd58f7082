@@ -1,0 +1,21 @@
+package sec2;
+//Thread(쓰레드) = Process(프로세스) = 현재 컴퓨터에서 실행중인 프로그램(작업)
+public class ThreadEx1 {
+	public static void firstThread() {
+		System.out.println("첫번째 쓰레드");
+	}
+	public static void secondaryThread() {
+		System.out.println("두번째 쓰레드");
+	}
+	
+	public static void main(String[] args) {
+		Thread thread1 = new Thread(new Runable()); //실행가능한 작업 
+		
+		Thread thread2 = new Thread();
+	}
+	@Override
+	public void run() {
+		firstThread();
+	
+
+}

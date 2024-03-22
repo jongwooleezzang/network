@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import ="java.util.*" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%
+	String title = "표현식과 표현언어";
+	String[] jongwoo = {"까다로움","꾸준함","개웃김","착함"};
+	Map<String , String> cho = new HashMap<>();
+	cho.put("name","조대신");
+	cho.put("age","69");
+	cho.put("nick","조교주");
+	
+	request.setAttribute("tt",title);
+	request.setAttribute("jg",jongwoo);
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>표현언어(Expression Language)</title>
+</head>
+<body>
+<h2><%=title %></h2>
+<br>
+<h2>${title }</h2>
+</body>
+</html>

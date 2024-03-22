@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP 8 객체</title>
+</head>
+<body>
+<h2>JSP 내장 객체 </h2>
+<p>out: 브라우저에 출력할 경우 사용</p>
+<p>request : 요청 정보를 담는 객체</p>
+<p>response : 응답 정보를 담는 객체</p>
+<p>session : 세션 정보를 담는 객체</p>
+<p>appliction : 웹 애플리케이션 정보를 담는 객체</p>
+<p>config : 웹 설정 정보를 담는 객체</p>
+<p>page : 웹 페이지 정보를 담는 객체 </p>
+<p>exception : 예외정보를 담는 객체 </p>
+<%
+ 	//Servlet 에서 page 객체 생성하기 
+ 	//HttpServlet spageContext = new HttpServlet();
+	//Object spage =spageContext.getPage(); 
+	
+	//Servlet 에서  out 객체 생성하기 
+	//PrintWriter out = response.getWriter();
+	
+	//Servlet 에서  request 객체 생성하기
+	//ServletRequest request = PageContext.getRequest();
+	
+	//Servlet 에서  response 객체 생성하기
+	//ServletResponse response = pageContext.getResponse();
+	
+	//Servlet 에서   session 객체 생성하기
+	//HttpSession session = pageContext.getSession();
+	
+	//Servlet 에서   application 객체 생성하기
+	//ServletContext Application = pageContext.getServletContext();
+	
+	//Servlet 에서 config 객체 생성하기
+	//ServletConfig config = pageContext.getServletConfig();
+	
+	//Servlet 에서   Exception 객체 생성하기
+	//Exception exeception = pageContext.getException();
+	
+	//서블릿에서 jsp 객체 생성하기 
+	//JspWriter jspOut = pageContext.getOut();
+	String name  ="이종우";
+	out.println("<h2>"+name+"</h2>");
+	out.println("<br>");
+%>
+<h2><%=name %></h2>
+<%
+  	JspWriter jspOut = pageContext.getOut();
+	out.println("<h2>out :태그를 포함한 내용을 출력할수 있는 객체</h2>" );	
+	out.println(jspOut == out);
+	
+	ServletRequest jspReq = pageContext.getRequest();
+	out.println("<h2>request
+	
+	
+%>
+</body>
+</html>

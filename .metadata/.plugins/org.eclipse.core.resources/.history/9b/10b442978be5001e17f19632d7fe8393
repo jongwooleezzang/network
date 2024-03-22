@@ -1,0 +1,89 @@
+package sec1;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Vector;
+
+public class SeverBack extends Thread {
+	Vector<ReceiveInfo> clientList = new Vector<>(); //클라이언트 쓰레드 목록 
+	ArrayList<String> nickNameList = new ArrayList<String>(); //클라이언트 대화명 목록 
+	ServerSocket server; //서버는 서버소켓과 일반 소켓이 필요함 
+	Socket socket;
+	private ChatServerGUI serverChatGui;
+	
+	public void setGUI(ChatServerGUI serverChatGui) {
+		this.serverChatGui = serverChatGui ;
+	}
+	
+	public void startServer(int port) {
+		Collections.synchronizedCollection(clientList);
+		try {
+			server = new ServerSocket(port);
+			System.out.println("현재IP주소 : ["+InetAddress.getLocalHost()+"]"+"port번호 : ["+port+"]");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void run() {
+		nickNameList.add("Admin");
+		while(true) {
+			System.out.println("접속을 기다립니다.");
+			try {
+				socket = server.accept();
+				System.out.println("["+socket.getInetAddress()+"] 에서 접속 하였습니다.");
+				ReceiveInfo receive = new ReceiveInfo(socket);
+				clientList.add(receive);
+				receive.start();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	class ReceiveInfo extends Thread{//받는사람 정보
+		private DataInputStream in;
+		private DataOutputStream out;
+		String nickName;
+		String message;
+		
+		
+		public ReceiveInfo(Socket socket) {
+			try {
+				out = new DataOutputStream(socket.getOutputStream());
+				in = new DataInputStream(socket.getInputStream());
+				nickName = in.readUTF();
+				nickNameList.add(nickName);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+
+		@Override  //Start 는 run을 오버라이드 받아야 쓸수있음 
+		public void run() {
+			serverChatGui.userList.setText(null);
+			serverChatGui.appendUserList(nickNameList);
+			transmitAll(nickName +"님이 입장 하였습니다.\n");
+		}
+		
+		
+		public void transmitAll(String message) {
+			try {
+				out.writeUTF(message);
+				out.flush();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+} 

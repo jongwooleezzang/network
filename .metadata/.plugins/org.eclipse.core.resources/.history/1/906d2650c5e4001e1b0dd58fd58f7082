@@ -1,0 +1,32 @@
+package sec3;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Scanner;
+
+
+
+public class MySever {
+	public static void main(String[] args) {
+			BufferedReader in = null; //읽는 스트림
+			PrintWriter out = null; //쓰기 스트림
+			
+			ServerSocket server =null;
+			Socket socket = null; 
+			
+			Scanner sc = new Scanner(System.in);
+			
+		try {
+		  server = new ServerSocket(6000);
+		  System.out.println("[Server 실행] : Client 연결 대기중 입니다.");
+		  socket = server.accept();   //클라이언트 연결 가능한 상태를 만들어주는것
+		  
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

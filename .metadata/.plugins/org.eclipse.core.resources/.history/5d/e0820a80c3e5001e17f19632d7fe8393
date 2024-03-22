@@ -1,0 +1,14 @@
+package sec1;
+
+public class URLConnectionEx {
+
+	public static void main(String[] args) {
+		try {
+			URL = new URL("https://www.youtube.com/watch?v=abxpNFF9qqY");
+			try {
+				URLConnection FakeCon = k
+			}
+		}
+	}
+
+}

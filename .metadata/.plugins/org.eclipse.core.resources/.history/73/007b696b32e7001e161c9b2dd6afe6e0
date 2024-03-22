@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <% page import= "java.util.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>웹의 객체 전달과 스코프(Scope)알기</title>
+</head>
+<body>
+<h2>웹의 객체 전달가 스코프(scope)알기</h2>
+<%
+	ArrayList<String>lst = new ArrayList<String>();
+	lst.add("이정희");
+	lst.add("이원석");
+	lst.add("이예린");
+	lst.add("이연정");
+	lst.add("이성하");
+	request.setAttribute("lst",lst );
+%>
+</body>
+</html>

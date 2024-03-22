@@ -1,0 +1,25 @@
+package sec1;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
+public class IOService {
+	public static void main(String[] args) {
+		output1();
+	}
+
+	public static void output1() {
+		FileOutputStream fos = null;
+		OutputStreamWriter osw =null;
+		try {
+			 fos = new FileOutputStream("test11.txt");
+			 osw = new OutputStreamWriter(fos, "UTF-8");
+			String str ="안녕하세요!";
+			 osw.write(str);
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+}
+

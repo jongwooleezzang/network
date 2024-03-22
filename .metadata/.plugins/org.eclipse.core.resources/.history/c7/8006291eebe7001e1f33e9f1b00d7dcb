@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import ="java.util.*" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체와 표현언어</title>
+</head>
+<body>
+<%
+	String name ="김응원";
+	int age =23;
+	int num1 =95 , num2 = 79  , num3 =100;
+	
+	Member mem1 = new Member();
+
+%>
+<%@ include file="menu.jsp" %>
+</body>
+</html>

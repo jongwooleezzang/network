@@ -1,0 +1,43 @@
+<%@page import="java.util.HashSet"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <% page import= "java.util.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>웹의 객체 전달과 스코프(Scope)알기</title>
+</head>
+<body>
+<h2>웹의 객체 전달가 스코프(scope)알기</h2>
+<%
+	ArrayList<String>lst = new ArrayList<String>();
+	lst.add("이정희");
+	lst.add("이원석");
+	lst.add("이예린");
+	lst.add("이연정");
+	lst.add("이성하");
+	request.setAttribute("lst",lst );
+	
+	Set<String>set =new HashSet<String>();
+	set.add("조대신");
+	set.add("조우진");
+	set.add("최대영");
+	set.add("한태역");
+	request.setAttribute("set",set);
+	
+	Map<Intefer,String>map =new HashMap<>();
+	map.put(1,"김동연");
+	map.put(2,"김민식");
+	map.put(3,"김민아");
+	map.put(4,"김윤정");
+	map.put(5,"김응원");
+	map.put(6,"김필규");
+	request.setAttribute("map", map);
+	
+	RequestDispatcher rd = request.getRequestDispatcher("test08.jsp");
+	rd.forward(request,response);
+	response.sendRedirect("test08.jsp");//페이지 이동
+%>
+</body>
+</html>

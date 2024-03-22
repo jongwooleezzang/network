@@ -1,0 +1,14 @@
+package sec2;
+//Thread(쓰레드) = Process(프로세스) = 현재 컴퓨터에서 실행중인 프로그램(작업)
+public class ThreadEx1 {
+	public static void FirstThread() {
+		System.out.println("첫번째 쓰레드");
+	}
+	public static void SecondaryThread() {
+		System.out.println("첫번째 쓰레드");
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}
